@@ -30,10 +30,10 @@ const initContextState: UseProductsContextType = { products: [] };
 
 const ProductsContext = createContext<UseProductsContextType>(initContextState);
 
-type childrenType = { children?: ReactElement | ReactElement[] };
+type ChildrenType = { children?: ReactElement | ReactElement[] };
 
 export const ProductProvider = ({ children }: ChildrenType): ReactElement => {
-  const [products, setProducts] = useState<ProductType[]>(initState);
+  const [products] = useState<ProductType[]>(initState);
   return (
     <ProductsContext.Provider value={{ products }}>
       {children}
